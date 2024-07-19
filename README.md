@@ -6,8 +6,8 @@ The model was trained on Zebra<->Horses dataset.
 
 |1st column: Input / 2nd column: Generated / 3rd row: Re-converted|
 |:---:|
-|![](results/horse_results.png)|
-|![](results/zebra_results.png)|
+|![](results-image/horse_results.png)|
+|![](results-image/zebra_results.png)|
 
 
 ### Horses and Zebras Dataset
