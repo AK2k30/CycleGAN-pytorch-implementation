@@ -1,3 +1,10 @@
+"""
+The `Discriminator` class is a PyTorch module that implements a convolutional neural network for discriminating between real and fake images. It takes an input image and outputs a scalar value between 0 and 1, representing the probability that the input is a real image.
+
+The `Discriminator` class consists of several `Block` modules, each of which applies a convolutional layer, instance normalization, and a leaky ReLU activation function. The initial layer applies a convolutional layer and a leaky ReLU activation function. The final layer applies a convolutional layer with a sigmoid activation function to produce the output.
+
+The `forward` method takes an input image and returns the probability that the input is a real image.
+"""
 import torch
 import torch.nn as nn
 

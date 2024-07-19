@@ -1,3 +1,54 @@
+"""
+The `ConvBlock` class is a PyTorch module that represents a convolutional block with optional downsampling, instance normalization, and activation.
+
+Args:
+    in_channels (int): The number of input channels.
+    out_channels (int): The number of output channels.
+    down (bool, optional): Whether to use a convolutional layer or a transposed convolutional layer. Defaults to `True`.
+    use_act (bool, optional): Whether to use an activation function. Defaults to `True`.
+    **kwargs: Additional keyword arguments passed to the convolutional layer.
+
+Attributes:
+    conv (nn.Sequential): The convolutional block.
+
+Methods:
+    forward(x: torch.Tensor) -> torch.Tensor:
+        Applies the convolutional block to the input tensor `x`.
+"""
+
+"""
+The `ResidualBlock` class is a PyTorch module that represents a residual block, which consists of two convolutional blocks with a skip connection.
+
+Args:
+    channels (int): The number of channels in the input and output tensors.
+
+Attributes:
+    block (nn.Sequential): The residual block.
+
+Methods:
+    forward(x: torch.Tensor) -> torch.Tensor:
+        Applies the residual block to the input tensor `x`.
+"""
+
+"""
+The `Generator` class is a PyTorch module that represents a generator network for a generative adversarial network (GAN).
+
+Args:
+    img_channels (int): The number of channels in the input and output images.
+    num_features (int, optional): The number of features in the initial convolutional layer. Defaults to 64.
+    num_residuals (int, optional): The number of residual blocks. Defaults to 9.
+
+Attributes:
+    initial (nn.Sequential): The initial convolutional layer with instance normalization and ReLU activation.
+    down_blocks (nn.ModuleList): The downsampling convolutional blocks.
+    res_blocks (nn.Sequential): The residual blocks.
+    up_blocks (nn.ModuleList): The upsampling convolutional blocks.
+    last (nn.Conv2d): The final convolutional layer that outputs the generated image.
+
+Methods:
+    forward(x: torch.Tensor) -> torch.Tensor:
+        Applies the generator network to the input tensor `x` and returns the generated image.
+"""
 import torch
 import torch.nn as nn
 

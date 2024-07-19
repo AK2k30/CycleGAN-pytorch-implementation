@@ -1,3 +1,14 @@
+"""
+Trains the CycleGAN model for translating between horse and zebra images.
+
+The `train_fn` function is the main training loop that updates the discriminator and generator models. It performs the following steps:
+
+1. Train the discriminator models `disc_H` and `disc_Z` by computing the real and fake losses, and updating the discriminator optimizer.
+2. Train the generator models `gen_H` and `gen_Z` by computing the adversarial, cycle, and identity losses, and updating the generator optimizer.
+3. Save sample generated images during training.
+
+The `main` function sets up the model components, optimizers, and loss functions. It also loads any pre-trained model checkpoints if specified, and creates the PyTorch DataLoader objects for the training and validation datasets. Finally, it runs the training loop for the specified number of epochs, saving model checkpoints if configured.
+"""
 import torch
 from dataset import HorseZebraDataset
 import sys

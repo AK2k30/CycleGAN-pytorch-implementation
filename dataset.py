@@ -1,3 +1,10 @@
+"""
+HorseZebraDataset is a PyTorch Dataset class that loads and preprocesses images of horses and zebras.
+
+The dataset is initialized with the paths to the directories containing the horse and zebra images. The `transform` parameter can be used to apply data augmentation to the images.
+
+The `__getitem__` method returns a tuple of the preprocessed zebra and horse images for a given index. The `__len__` method returns the length of the dataset, which is the maximum of the number of zebra and horse images.
+"""
 from PIL import Image
 import os
 from torch.utils.data import Dataset
